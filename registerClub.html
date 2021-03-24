@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<title> Soccer Tournament Club Registration </title>
+		<meta charset = "utf-8">
+		<meta name = "viewport" content = "width = device-width, initial-scale=1.0">
+		<meta name = "description" content = "Signing up or registering your club for the UJ also University of Jamestown Soccer Tournament is done here">	
+		<meta name = "keywords" content = "register, guidline, club, UJ, Soccer, tournament, affiliate, coach, players, U10, U13, 16, U19">		
+		<link rel = "stylesheet" type = "text/css" href = "http://jc-jics2.uj.edu/users/ezra.orina/FINAL_PROJECT/SoccerTournament.css">
+		<link rel = "icon" type = "image/x-icon" href = "http://jc-jics2.uj.edu/users/ezra.orina/FINAL_PROJECT/Images/UJIcon.ico">
+		
+		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+		<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js">  </script>
+		<script>
+			$(document).ready(function(){
+				$(document.forms[0]).validate();
+			});
+			
+			function AlertMessage()
+			{	
+				var clubName = document.forms[0].clubName.value;
+				if(clubName != "") alert( clubName + " has been registered succesfully." );
+				return false;
+			}
+		</script>
+	</head>
+	
+	<body>
+	<div id = "wrapper">
+		<header><div id = "topRow"> <img src = "http://jc-jics2.uj.edu/users/ezra.orina/FINAL_PROJECT/Images/GirlKickingABall.jpg" alt = "Girl Kicking A Ball" id = "topLeftImage" width = "200"> 					
+				<img src = "http://jc-jics2.uj.edu/users/ezra.orina/FINAL_PROJECT/Images/UJLogo.jpg" alt = "UJ Logo" id = "topRightImage" width = "200">
+				<h1> &nbsp; UJ SOCCER TOURNAMENT </h1>
+			</div>
+		</header>
+		
+		<div id = "navAndMain"><nav> <ul> <li> <a href = "http://jc-jics2.uj.edu/users/ezra.orina/FINAL_PROJECT/index.html"> HOME </a> </li>
+			<li> <a href = "http://jc-jics2.uj.edu/users/ezra.orina/FINAL_PROJECT/registration.html"> REGISTRATION GUIDELINES </a> </li>
+			<li> <a href = "http://jc-jics2.uj.edu/users/ezra.orina/FINAL_PROJECT/registerClub.html"> REGISTER CLUB </a> </li>
+			<li> <a href = "http://jc-jics2.uj.edu/users/ezra.orina/FINAL_PROJECT/registerIndividual.html"> REGISTER INDIVIDUAL </a> </li> </ul>
+		</nav>
+		
+		<main><div id = "mainPage"> 
+			<p> Only Register here if you are  affiliated with a Club! Otherwise,
+			<a href = "http://jc-jics2.uj.edu/users/ezra.orina/FINAL_PROJECT/registerIndividual.html"> Register as Individual </a>. </p> 
+			
+			<p> Fields marked with * are required </p>
+			<form name = "registerClub" id = "registerClub" method = "post" action = "#" onsubmit = "return AlertMessage();">
+				 <label for = "clubName"> *Club Name: </label> <input type = "text" name = "clubName" id = "clubName" class = "required" placeholder = "UJ Soccer Club" autofocus = "autofocus"> 
+				 <label for = "ageGroup"> *Age Group: </label> <select size = "1"  name = "ageGroup" id = "ageGroup"  class = "required">
+						<option selected = "selected"> Select </option>
+						<option> U10 </option>
+						<option> U13 </option>
+						<option> U16 </option>
+						<option> U19 </option> </select>
+				 <label for = "clubAddress"> *Club Office Address: </label> <input type = "text" name = "clubAddress" id = "clubAddress" class = "required">
+				 <label for = "clubEmail"> *Club Email Address: </label> <input type = "email" name = "clubEmail" id = "clubEmail" class = "required email" placeholder = "ujsoccer.play@gmail.com">
+				 <label for = "clubPhone"> *Club Phone Number: </label> <input type = "tel" name = "clubPhone" id = "clubPhone"  class = "required" placeholder = "(701) 252-6548"> 
+				 <label for = "coachFirstName"> *Coach First Name: </label> <input type = "text" name = "coachFirstName" id = "coachFirstName"  class = "required" placeholder = "John">
+				 <label for = "coachLastName"> *Coach Last Name: </label> <input type = "text" name = "coachLastName" id = "coachLastName"  class = "required" placeholder = "Doe"> 
+				 <label for = "coachEmail"> *Coach Email Address: </label> <input type = "email" name = "coachEmail" id = "coachEmail" class = "required" placeholder = "johndoe.soccer@gmail.com">
+				 <label for = "coachPhone"> *Coach Phone Number: </label> <input type = "tel" name = "coachPhone" id = "coachPhone"  required = "required" placeholder = "(701) 252-6548">
+				 <label for = "clubSize"> *Registered Players Count: </label> <input type = "number" min = "1" max = "25" name = "class" id = "clubSize"  class = "required"> 				
+				 <label for = "clubDetails"> Club Details </label> 
+				<textarea id = "clubDetails" name = "clubDetails" cols = "40" rows = "3"> Write any club Information that we need to be aware of. </textarea> 
+	
+				<input type = "reset" value = "Clear Form" id = "resetClub" name = "resetClub">
+				<input type = "submit" value = "Register Club" id = "submitClub" name = "submitClub">
+				
+			</form>
+		</div>					
+		</main> </div>
+		
+		<footer><div> 
+				<p> Contact us at <a href = "mailto:ezraorina@gmail.com"> ezraorina@gmail.com </a> or <span id = "desktop"> (701) 200-3561 </span>
+				<span id = "phoneNumber"> <a href = "tel:7012697126"> (701) 200-3561 </a> </span> </p>
+			</div>
+		</footer>
+	</div>
+	</body>
+	
+</html>

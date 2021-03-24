@@ -1,0 +1,199 @@
+*{box-sizing: border-box;}
+
+html{ background-color: #ffcc66;}
+
+#wrapper{
+	min-height: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 1250px;
+	border: 2px solid #666666;
+}
+
+#topRow{
+	height: 150px;
+	border-bottom: 2px solid #666666;
+	margin-top: -32px;
+	background-color: #ff9900;
+	text-align: center;
+}	
+
+#mainPage{
+	padding: 10px;
+	min-height: 650px;
+	position: relative;
+	margin-left: 200px;
+	overflow: auto;
+	font-family: verdana, arial, san-serif;
+	font-size: x-large;
+}
+
+footer{
+	height: 40px;
+	padding: 4px 0;
+	text-align: center;
+	font-size: small;
+	border-top: 2px solid #666666;
+}
+
+#topLeftImage{ float: left; height: 100%}
+#topRightImage{float: right; height: 100%}
+
+#u10image, #u13image, #u16image, #u19image{
+	opacity: 0.4;
+	visibility: hidden;
+	position: absolute;
+	height: 480px; 
+	width: auto;
+	left: 430px;
+	bottom: 0px;
+	transition: opacity 1.5s ease-out;
+}
+
+#u10details:hover  #u10image{ visibility: visible; opacity: 1;}
+#u13details:hover  #u13image{ visibility: visible; opacity: 1;}
+#u16details:hover  #u16image{ visibility: visible; opacity: 1;}
+#u19details:hover  #u19image{ visibility: visible; opacity: 1;}
+
+h1{	letter-spacing: .2em; font-size: 3em;}
+
+#navAndMain{ position: relative;}
+
+nav{
+	position: absolute;	left: 0; top: 0;
+	width: 200px;
+	background-color: #666666;
+	height: 100%;
+}
+
+nav ul {list-style-type: none;}
+
+nav ul li{	
+	display: block; 
+	height: 3em;
+	margin-bottom: 15px; 
+	letter-spacing: .1em;
+	font-size: large;
+}
+	
+nav a{text-decoration: none;}
+
+aside{float: right;}
+
+#phoneNumber{display: none;}
+#desktop{display: inline;}
+#mainPage, footer{ font-family: arial, verdana, helvetica, sans-serif;}
+h1, nav{ font-family: Georgia, "Times New Roman", serif;}
+
+.indexPage{line-height: 25px; font-size: 20px;}
+
+#registerClubButton, #registerIndividualButton {
+	position: absolute;
+	display: inline-block;
+	padding: 10px;
+	font-size: x-large;
+	text-decoration: none;
+	background-color: #003366;
+	width: auto;
+	border: 2px solid #666666;
+	bottom: 0;
+	text-align: center;
+}
+
+#registerClubButton{ left: 2px;}
+
+#registerIndividualButton{ left: 250px; }
+
+#youTube{
+	display: inline-block;
+	width: 500px;
+	float: right;
+	margin-bottom: 0;
+}
+
+label{
+	float: left;
+	width: 400px;
+	text-align: right;
+}
+
+input, textarea, select{
+	display: block;
+	margin-left: 500px;
+	min-height: 2em;
+	min-width: 15em;
+	margin-bottom: 1em;
+}
+
+#resetIndividual, #resetClub, #submitIndividual, #submitClub{	
+	height: 50px;
+	width: 100px; 
+	font-size: x-large;
+	background-color: #003366;
+	color: #ff9900;
+	margin-top: 5px;
+	margin-bottom: 30px;
+	display: inline-block;
+}
+
+#submitIndividual, #submitClub{ margin-left: 150px;}
+
+#resetIndividual, #resetClub{ margin-left: 0; }
+
+nav a:link, #registerClubButton:link, #registerIndividualButton:link{color: #ff9900;}
+nav a:visited, #registerClubButton:visited, #registerIndividualButton:visited{color: #ff9900;}
+	
+label.error { margin-top: -1.8em; display: inline-block; float: right; height: 2em;}
+label:first-of-type{ color: #003366;}
+	
+@media only screen and (max-width: 1024px)
+{
+	aside{ display: none;}
+	#wrapper{ max-width: 900px; min-width: 750px;}
+	nav{position: static; width: 100%; height: 60px; text-align: center; margin-top: -18px;}
+	nav ul li{	display: inline-block; height: 30px; word-wrap: normal; width: 200px; font-size: 20px;}
+	#mainPage{ margin-left: 0;}
+	h1{	word-spacing: .2em; letter-spacing: normal;	font-size: 40px; padding: 10px 0 10px 250px;}
+	#topRow{ height: 100px; margin-top: -28px; }
+	#topRightImage{ display: none;}
+	#submitIndividual, #submitClub{ margin-left: 110px;}
+	#registerClubButton{bottom: 120px; width: 300px; }
+	#registerIndividualButton {bottom: 2px; left: 2px; width: 300px;}
+	label.error { font-size: small; position: absolute; right: 14px; margin-top: -2.5em;}
+}
+
+@media only screen and (max-width: 768px)
+{
+	html{ max-width: 750px;}
+	#wrapper{ max-width: 600px; min-width: 300px;}
+	nav{height: 170px;}
+	nav ul li{	display: block; height: auto; width: 100%; }
+	nav a{ display: inline-block; border-bottom: 2px solid #99cc00; width: 20em;}
+	#mainPage{ margin-left: 0; font-size: 1em;}
+	.registrationPage{font-size: x-large !important; }
+	h1{ word-spacing: normal; padding: 20px; font-size: 30px;}
+	#topRow{ margin-top: -20px; height: 80px;}
+	#registerIndividualButton, #registerClubButton{left: 200px;}
+	#topLeftImage, #u10image, #u13image, #u16image, #u19image, #youTube{ display: none;}
+	#resetIndividual, #resetClub, #submitIndividual, #submitClub{ margin-left: 150px;}
+	label{ width: 200px;}
+	input, textarea, select{ margin-left: 250px; }
+	label.error { font-size: x-small;}
+	#desktop{display: none;}
+	#phoneNumber{display: inline-block;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

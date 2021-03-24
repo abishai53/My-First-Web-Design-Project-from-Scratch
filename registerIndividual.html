@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<title> Soccer Tournament Individual Registration </title>
+		<meta charset = "utf-8">
+		<meta name = "viewport" content = "width = device-width, initial-scale=1.0">
+		<meta name = "description" content = "Signing up or registering individually for the UJ also University of Jamestown Soccer Tournament is done here">		
+		<meta name = "keywords" content = "register, guidline, Individual, U10, U13, 16, U19, UJ, Soccer, tournament, affiliate, personal, health, participation">
+		<link rel = "stylesheet" type = "text/css" href = "http://jc-jics2.uj.edu/users/ezra.orina/FINAL_PROJECT/SoccerTournament.css">
+		<link rel = "icon" type = "image/x-icon" href = "http://jc-jics2.uj.edu/users/ezra.orina/FINAL_PROJECT/Images/UJIcon.ico">
+		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+		<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js">  </script>
+		<script>
+			$(document).ready(function(){
+				$(document.forms[0]).validate();
+			});
+
+			function CalculateCost()
+			{
+				var cost = 0;
+				if(document.forms[0].ageGroup.value == "U10") cost = 60;
+				else if(document.forms[0].ageGroup.value == "U13") cost = 90;
+				else if(document.forms[0].ageGroup.value == "U16") cost = 120;
+				else if(document.forms[0].ageGroup.value == "U19") cost = 150;
+				return cost;
+			}
+			
+			function AlertMessage()
+			{	
+				var cost = CalculateCost();
+				if(cost > 0){
+					var firstName = document.forms[0].firstName.value;
+					var lastName = document.forms[0].lastName.value;
+					var ageGroup = document.forms[0].ageGroup.value;
+					alert( firstName + "  " + lastName  + ", You signed up for " + ageGroup + ".\n This Costs $" + cost ); 
+				}
+				return false;
+			}
+		</script>	
+	
+		
+	</head>
+	
+	<body>
+	<div id = "wrapper">
+		<header><div id = "topRow"> <img src = "http://jc-jics2.uj.edu/users/ezra.orina/FINAL_PROJECT/Images/GirlKickingABall.jpg" alt = "Girl Kicking A Ball" id = "topLeftImage" width = "200"> 					
+				<img src = "http://jc-jics2.uj.edu/users/ezra.orina/FINAL_PROJECT/Images/UJLogo.jpg" alt = "UJ Logo" id = "topRightImage" width = "200">
+				<h1> &nbsp; UJ SOCCER TOURNAMENT </h1>
+			</div>
+		</header>
+		
+		<div id = "navAndMain"><nav><ul>
+			<li> <a href = "http://jc-jics2.uj.edu/users/ezra.orina/FINAL_PROJECT/index.html"> HOME </a> </li>
+			<li> <a href = "http://jc-jics2.uj.edu/users/ezra.orina/FINAL_PROJECT/registration.html"> REGISTRATION GUIDELINES </a> </li>
+			<li> <a href = "http://jc-jics2.uj.edu/users/ezra.orina/FINAL_PROJECT/registerClub.html"> REGISTER CLUB </a> </li>
+			<li> <a href = "http://jc-jics2.uj.edu/users/ezra.orina/FINAL_PROJECT/registerIndividual.html"> REGISTER INDIVIDUAL </a> </li></ul>
+		</nav>
+		
+		<main><div id = "mainPage"> 
+			<p> Only Register here if you are not affiliated with any Club! Otherwise,
+			<a href = "http://jc-jics2.uj.edu/users/ezra.orina/FINAL_PROJECT/registerClub.html"> Register Club </a>. </p> 
+			
+			<p> Fields marked with * are required </p>
+			<form name = "registerIndividual" id = "registerIndividual" method = "post" action = "#" onsubmit = "return AlertMessage();">
+				<details open> <summary> Personal Info </summary> <fieldset>  <legend> Personal Information </legend> 
+					<label for = "firstName"> *First Name: </label> <input type = "text" name = "firstName" id = "firstName" class = "required" placeholder = "John" autofocus = "autofocus"> 
+					<label for = "lastName"> *Last Name: </label> <input type = "text" name = "lastName" id = "lastName"  class = "required" placeholder = "Doe"> 
+					<label for = "address"> Address: </label> <input type = "text" name = "address" id = "address"> 
+					<label for = "email"> Email Address: </label> <input type = "email" name = "email" id = "email" placeholder = "johndoe@gmail.com"> 
+					<label for = "phone"> *Phone Number: </label> <input type = "tel" name = "phone" id = "phone"  class = "required" placeholder = "(701) 252-6548"> 
+
+				</fieldset></details>
+			
+				<details open> <summary> Health Info </summary> <fieldset>  <legend> Health Information </legend> 
+					<label for = "doctorFisrtName"> *Doctor First Name: </label> <input type = "text" name = "doctorFisrtName" id = "doctorFisrtName" class = "required" placeholder = "Dr. John"> 
+					<label for = "doctorLastName"> *Doctor Last Name: </label> <input type = "text" name = "doctorLastName" id = "doctorLastName"  class = "required" placeholder = "Doe"> 
+					<label for = "doctorEmail"> *Doctor's Email Address: </label> <input type = "text" name = "doctorEmail" id = "doctorEmail" class = "required email" placeholder = "drjohndoe@gmail.com"> 
+					<label for = "doctorPhone"> *Phone Number: </label> <input type = "tel" name = "doctorPhone" id = "doctorPhone"  class = "required" placeholder = "(701) 252-6548"> 
+					<label for = "healthDetails"> *Health Conditions </label> 
+					<textarea id = "healthDetails" name = "healthDetails" cols = "40" rows = "4" required = "required">Write any health conditions that we need to be aware of. Write NA if there aren't any </textarea> 
+				</fieldset></details>
+				
+				<details open> <summary> Participation Info </summary> <fieldset>  <legend> Participation Information </legend> 
+					<label for = "availableDate"> *Date Available to Start: </label> <input type = "date" name = "availableDate" id = "availableDate" class = "required"> 
+					<label for = "ageGroup"> *Age Group: </label> <select size = "1"  name = "ageGroup" id = "ageGroup"  class = "required">
+						<option selected = "selected"> Select </option>
+						<option> U10 </option>
+						<option> U13 </option>
+						<option> U16 </option>
+						<option> U19 </option> </select>
+					<label for = "otherInfo"> Any Other Info </label> 
+					<textarea id = "otherInfo" name = "otherInfo" cols = "40" rows = "3">Any other info that we may need to be aware of. </textarea> 
+				</fieldset></details>	
+				
+				<input type = "reset" value = "Clear Form" id = "resetIndividual" name = "resetIndividual">
+				<input type = "submit" value = "Register Individual" id = "submitIndividual" name = "submitIndividual">
+				
+			</form>
+		</div>					
+		</main> </div>
+		
+		<footer><div> 
+				<p> Contact us at <a href = "mailto:ezraorina@gmail.com"> ezraorina@gmail.com </a> or <span id = "desktop"> (701) 200-3561 </span>
+				<span id = "phoneNumber"> <a href = "tel:7012697126"> (701) 200-3561 </a> </span> </p>
+			</div>
+		</footer>
+	</div>
+	</body>
+	
+	
+</html>
